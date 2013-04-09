@@ -10,4 +10,9 @@
 
 @interface Contributor : NSObject
 
+
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *imageUrl;
+
 @end

@@ -10,12 +10,48 @@
 
 #import "DetailViewController.h"
 
+#import "TFHpple.h"
+#import "Parser.h"
+#import "Contributor.h"
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
 }
 @end
 
 @implementation MasterViewController
+
+-(void)loadTutorials {
+    // 1
+    NSURL *tutorialsUrl = [NSURL URLWithString:@"http://www.raywenderlich.com/tutorials"];
+    NSData *tutorialsHtmlData = [NSData dataWithContentsOfURL:tutorialsUrl];
+    
+    // 2
+    TFHpple *tutorialsParser = [TFHpple hppleWithHTMLData:tutorialsHtmlData];
+    
+    // 3
+    NSString *tutorialsXpathQueryString = @"//div[@class='entry']/ul/li/a";
+    NSArray *tutorialsNodes = [tutorialsParser searchWithXPathQuery:tutorialsXpathQueryString];
+    
+    // 4
+    NSMutableArray *newTutorials = [[NSMutableArray alloc] initWithCapacity:0];
+    for (TFHppleElement *element in tutorialsNodes) {
+        // 5
+        Parser *tutorial = [[Parser alloc] init];
+        [newTutorials addObject:tutorial];
+        
+        // 6
+        tutorial.title = [[element firstChild] content];
+        
+        // 7
+        tutorial.url = [element objectForKey:@"href"];
+    }
+    
+    // 8
+    _objects = newTutorials;
+    [self.tableView reloadData];
+}
+
 
 - (void)awakeFromNib
 {

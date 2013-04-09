@@ -10,4 +10,10 @@
 
 @implementation Contributor
 
+
+@synthesize name = _name;
+@synthesize url = _url;
+@synthesize imageUrl = _imageUrl;
+
+
 @end
