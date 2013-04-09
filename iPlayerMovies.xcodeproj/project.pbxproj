@@ -25,6 +25,8 @@
 		37B11BF5171467C0005F67DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B11BCA171467BF005F67DD /* Foundation.framework */; };
 		37B11BFD171467C0005F67DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37B11BFB171467C0005F67DD /* InfoPlist.strings */; };
 		37B11C00171467C0005F67DD /* iPlayerMoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11BFF171467C0005F67DD /* iPlayerMoviesTests.m */; };
+		37B11C0C1714699B005F67DD /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11C0B1714699B005F67DD /* Parser.m */; };
+		37B11C0F171469F9005F67DD /* Contributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11C0E171469F9005F67DD /* Contributor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		37B11BFC171467C0005F67DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37B11BFE171467C0005F67DD /* iPlayerMoviesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iPlayerMoviesTests.h; sourceTree = "<group>"; };
 		37B11BFF171467C0005F67DD /* iPlayerMoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPlayerMoviesTests.m; sourceTree = "<group>"; };
+		37B11C0A1714699B005F67DD /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		37B11C0B1714699B005F67DD /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		37B11C0D171469F9005F67DD /* Contributor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contributor.h; sourceTree = "<group>"; };
+		37B11C0E171469F9005F67DD /* Contributor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contributor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		37B11BCE171467BF005F67DD /* iPlayerMovies */ = {
 			isa = PBXGroup;
 			children = (
+				37B11C0917146987005F67DD /* Model */,
 				37B11BD7171467BF005F67DD /* AppDelegate.h */,
 				37B11BD8171467BF005F67DD /* AppDelegate.m */,
 				37B11BE0171467C0005F67DD /* MainStoryboard_iPhone.storyboard */,
@@ -166,6 +173,17 @@
 				37B11BFB171467C0005F67DD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37B11C0917146987005F67DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37B11C0A1714699B005F67DD /* Parser.h */,
+				37B11C0B1714699B005F67DD /* Parser.m */,
+				37B11C0D171469F9005F67DD /* Contributor.h */,
+				37B11C0E171469F9005F67DD /* Contributor.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +301,8 @@
 				37B11BD9171467BF005F67DD /* AppDelegate.m in Sources */,
 				37B11BE8171467C0005F67DD /* MasterViewController.m in Sources */,
 				37B11BEB171467C0005F67DD /* DetailViewController.m in Sources */,
+				37B11C0C1714699B005F67DD /* Parser.m in Sources */,
+				37B11C0F171469F9005F67DD /* Contributor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +425,7 @@
 				GCC_PREFIX_HEADER = "iPlayerMovies/iPlayerMovies-Prefix.pch";
 				INFOPLIST_FILE = "iPlayerMovies/iPlayerMovies-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -416,6 +437,7 @@
 				GCC_PREFIX_HEADER = "iPlayerMovies/iPlayerMovies-Prefix.pch";
 				INFOPLIST_FILE = "iPlayerMovies/iPlayerMovies-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
