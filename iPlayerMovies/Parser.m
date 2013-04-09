@@ -13,5 +13,7 @@
 
 @synthesize title = _title;
 @synthesize info = _info;
+// other attributes can be added to complete the movie details page
+// image url, etc.
 
 @end

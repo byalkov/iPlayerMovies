@@ -41,8 +41,10 @@
         // 5
         Parser *movie = [[Parser alloc] init];
         [newMovies addObject:movie];
-    
+        
+        //add the title of the entry to the list of movies
         movie.title = [[element firstChild] content];
+        
         // if available get info for the movie and add it to movie.info
     }
  

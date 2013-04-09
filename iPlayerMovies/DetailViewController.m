@@ -17,7 +17,7 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailItem:(id)newDetailItem	
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
@@ -34,10 +34,9 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
+    // can be improved to display all the information available for the movie, including the image (from the url)
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = @"Details about the movie";//[self.detailItem description];
-    }
+        self.detailDescriptionLabel.text = @"Details about the movie";    }
 }
 
 - (void)viewDidLoad
