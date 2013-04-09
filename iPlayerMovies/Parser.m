@@ -12,6 +12,6 @@
 
 
 @synthesize title = _title;
-@synthesize url = _url;
+@synthesize info = _info;
 
 @end

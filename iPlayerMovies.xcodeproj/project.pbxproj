@@ -17,7 +17,6 @@
 		37B11BDD171467C0005F67DD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37B11BDC171467C0005F67DD /* Default@2x.png */; };
 		37B11BDF171467C0005F67DD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37B11BDE171467C0005F67DD /* Default-568h@2x.png */; };
 		37B11BE2171467C0005F67DD /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B11BE0171467C0005F67DD /* MainStoryboard_iPhone.storyboard */; };
-		37B11BE5171467C0005F67DD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B11BE3171467C0005F67DD /* MainStoryboard_iPad.storyboard */; };
 		37B11BE8171467C0005F67DD /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11BE7171467C0005F67DD /* MasterViewController.m */; };
 		37B11BEB171467C0005F67DD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11BEA171467C0005F67DD /* DetailViewController.m */; };
 		37B11BF3171467C0005F67DD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B11BF2171467C0005F67DD /* SenTestingKit.framework */; };
@@ -26,11 +25,10 @@
 		37B11BFD171467C0005F67DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37B11BFB171467C0005F67DD /* InfoPlist.strings */; };
 		37B11C00171467C0005F67DD /* iPlayerMoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11BFF171467C0005F67DD /* iPlayerMoviesTests.m */; };
 		37B11C0C1714699B005F67DD /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11C0B1714699B005F67DD /* Parser.m */; };
-		37B11C0F171469F9005F67DD /* Contributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11C0E171469F9005F67DD /* Contributor.m */; };
 		37B11C1717146D39005F67DD /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11C1217146D39005F67DD /* TFHpple.m */; };
 		37B11C1817146D39005F67DD /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11C1417146D39005F67DD /* TFHppleElement.m */; };
 		37B11C1917146D39005F67DD /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B11C1617146D39005F67DD /* XPathQuery.m */; };
-		37B11C1B17146DA8005F67DD /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B11C1A17146DA8005F67DD /* libxml2.dylib */; };
+		37B11C1F171478A3005F67DD /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B11C1E171478A3005F67DD /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +56,6 @@
 		37B11BDC171467C0005F67DD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		37B11BDE171467C0005F67DD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		37B11BE1171467C0005F67DD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		37B11BE4171467C0005F67DD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		37B11BE6171467C0005F67DD /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		37B11BE7171467C0005F67DD /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		37B11BE9171467C0005F67DD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -71,15 +68,13 @@
 		37B11BFF171467C0005F67DD /* iPlayerMoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPlayerMoviesTests.m; sourceTree = "<group>"; };
 		37B11C0A1714699B005F67DD /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		37B11C0B1714699B005F67DD /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
-		37B11C0D171469F9005F67DD /* Contributor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contributor.h; sourceTree = "<group>"; };
-		37B11C0E171469F9005F67DD /* Contributor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contributor.m; sourceTree = "<group>"; };
 		37B11C1117146D39005F67DD /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		37B11C1217146D39005F67DD /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
 		37B11C1317146D39005F67DD /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
 		37B11C1417146D39005F67DD /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		37B11C1517146D39005F67DD /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		37B11C1617146D39005F67DD /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		37B11C1A17146DA8005F67DD /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		37B11C1E171478A3005F67DD /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37B11C1B17146DA8005F67DD /* libxml2.dylib in Frameworks */,
+				37B11C1F171478A3005F67DD /* libxml2.dylib in Frameworks */,
 				37B11BC9171467BF005F67DD /* UIKit.framework in Frameworks */,
 				37B11BCB171467BF005F67DD /* Foundation.framework in Frameworks */,
 				37B11BCD171467BF005F67DD /* CoreGraphics.framework in Frameworks */,
@@ -110,7 +105,7 @@
 		37B11BBC171467BF005F67DD = {
 			isa = PBXGroup;
 			children = (
-				37B11C1A17146DA8005F67DD /* libxml2.dylib */,
+				37B11C1E171478A3005F67DD /* libxml2.dylib */,
 				37B11BCE171467BF005F67DD /* iPlayerMovies */,
 				37B11BF8171467C0005F67DD /* iPlayerMoviesTests */,
 				37B11BC7171467BF005F67DD /* Frameworks */,
@@ -146,7 +141,6 @@
 				37B11BD7171467BF005F67DD /* AppDelegate.h */,
 				37B11BD8171467BF005F67DD /* AppDelegate.m */,
 				37B11BE0171467C0005F67DD /* MainStoryboard_iPhone.storyboard */,
-				37B11BE3171467C0005F67DD /* MainStoryboard_iPad.storyboard */,
 				37B11BE6171467C0005F67DD /* MasterViewController.h */,
 				37B11BE7171467C0005F67DD /* MasterViewController.m */,
 				37B11BE9171467C0005F67DD /* DetailViewController.h */,
@@ -194,8 +188,6 @@
 			children = (
 				37B11C0A1714699B005F67DD /* Parser.h */,
 				37B11C0B1714699B005F67DD /* Parser.m */,
-				37B11C0D171469F9005F67DD /* Contributor.h */,
-				37B11C0E171469F9005F67DD /* Contributor.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -289,7 +281,6 @@
 				37B11BDD171467C0005F67DD /* Default@2x.png in Resources */,
 				37B11BDF171467C0005F67DD /* Default-568h@2x.png in Resources */,
 				37B11BE2171467C0005F67DD /* MainStoryboard_iPhone.storyboard in Resources */,
-				37B11BE5171467C0005F67DD /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +320,6 @@
 				37B11BE8171467C0005F67DD /* MasterViewController.m in Sources */,
 				37B11BEB171467C0005F67DD /* DetailViewController.m in Sources */,
 				37B11C0C1714699B005F67DD /* Parser.m in Sources */,
-				37B11C0F171469F9005F67DD /* Contributor.m in Sources */,
 				37B11C1717146D39005F67DD /* TFHpple.m in Sources */,
 				37B11C1817146D39005F67DD /* TFHppleElement.m in Sources */,
 				37B11C1917146D39005F67DD /* XPathQuery.m in Sources */,
@@ -369,14 +359,6 @@
 				37B11BE1171467C0005F67DD /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		37B11BE3171467C0005F67DD /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37B11BE4171467C0005F67DD /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		37B11BFB171467C0005F67DD /* InfoPlist.strings */ = {
@@ -453,7 +435,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPlayerMovies/iPlayerMovies-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "iPlayerMovies/iPlayerMovies-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -465,7 +449,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPlayerMovies/iPlayerMovies-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "iPlayerMovies/iPlayerMovies-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

@@ -12,7 +12,7 @@
 
 #import "TFHpple.h"
 #import "Parser.h"
-#import "Contributor.h"
+
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -21,56 +21,59 @@
 
 @implementation MasterViewController
 
--(void)loadTutorials {
-    // 1
-    NSURL *tutorialsUrl = [NSURL URLWithString:@"http://www.raywenderlich.com/tutorials"];
-    NSData *tutorialsHtmlData = [NSData dataWithContentsOfURL:tutorialsUrl];
+-(void)loadMovies {
+
+    NSURL *movieListUrl = [NSURL URLWithString:@"http://feeds.bbc.co.uk/iplayer/categories/films/tv/list"];
+    NSData *moviesHtmlData = [NSData dataWithContentsOfURL:movieListUrl];
     
-    // 2
-    TFHpple *tutorialsParser = [TFHpple hppleWithHTMLData:tutorialsHtmlData];
+    TFHpple *movieListParser = [TFHpple hppleWithHTMLData:moviesHtmlData];
     
-    // 3
-    NSString *tutorialsXpathQueryString = @"//div[@class='entry']/ul/li/a";
-    NSArray *tutorialsNodes = [tutorialsParser searchWithXPathQuery:tutorialsXpathQueryString];
+    // If the query string is changed to get the whole entry, more information about the movie 
+    // can be acquired from the	content tag.
+    NSString *entryQuery = @"//entry/title";
+    NSArray *moviesNodes = [movieListParser searchWithXPathQuery:entryQuery];
+       
+    //NSLog(@"%@",[moviesNodes description]);
+
+    NSMutableArray *newMovies = [[NSMutableArray alloc] initWithCapacity:0];
     
-    // 4
-    NSMutableArray *newTutorials = [[NSMutableArray alloc] initWithCapacity:0];
-    for (TFHppleElement *element in tutorialsNodes) {
+    for (TFHppleElement *element in moviesNodes) {
         // 5
-        Parser *tutorial = [[Parser alloc] init];
-        [newTutorials addObject:tutorial];
-        
-        // 6
-        tutorial.title = [[element firstChild] content];
-        
-        // 7
-        tutorial.url = [element objectForKey:@"href"];
-    }
+        Parser *movie = [[Parser alloc] init];
+        [newMovies addObject:movie];
     
-    // 8
-    _objects = newTutorials;
+        movie.title = [[element firstChild] content];
+        // if available get info for the movie and add it to movie.info
+    }
+ 
+    // sorting by title
+    // can be optimised by discarding leading "the/a" from titles
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray;
+    sortedArray = [newMovies sortedArrayUsingDescriptors:sortDescriptors];
+
+    NSMutableArray *temp = [sortedArray mutableCopy];
+    _objects = temp;//newMovies;
     [self.tableView reloadData];
 }
 
 
 - (void)awakeFromNib
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    }
+    }*/
     [super awakeFromNib];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    [self loadMovies];
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,17 +81,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -103,11 +95,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    Parser *thisMovie = [_objects objectAtIndex:indexPath.row];
+    cell.textLabel.text = thisMovie.title;
+    //cell.detailTextLabel.text =  thisMovie.info;
+    
     return cell;
+
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
